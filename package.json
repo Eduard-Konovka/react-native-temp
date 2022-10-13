@@ -2,9 +2,12 @@
   "name": "react-native-temp",
   "version": "1.0.0",
   "description": "Learning React Native",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/Eduard-Konovka/react-native-temp/issues"
   },
-  "homepage": "https://github.com/Eduard-Konovka/react-native-temp#readme"
+  "homepage": "https://github.com/Eduard-Konovka/react-native-temp#readme",
+  "dependencies": {
+    "expo": "~46.0.13",
+    "expo-status-bar": "~1.4.0",
+    "react": "18.0.0",
+    "react-native": "0.69.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
+  "private": true
 }
