@@ -1,0 +1,19 @@
+{
+  "name": "react-native-temp",
+  "version": "1.0.0",
+  "description": "Learning React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eduard-Konovka/react-native-temp.git"
+  },
+  "author": "Eduard Konovka <ed098ua@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eduard-Konovka/react-native-temp/issues"
+  },
+  "homepage": "https://github.com/Eduard-Konovka/react-native-temp#readme"
+}
