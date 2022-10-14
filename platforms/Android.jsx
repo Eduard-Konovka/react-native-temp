@@ -9,6 +9,7 @@ import {
   Pressable,
   Platform,
 } from 'react-native';
+import Separator from '../components/Separator';
 
 const buttonClick = () =>
   Alert.alert('Героям слава!', 'Выбирите действие', [
@@ -34,8 +35,6 @@ const buttonClick2 = () =>
     },
   ]);
 const textPress = () => Alert.alert('Text pressed');
-
-const Separator = () => <View style={styles.separator} />;
 
 export default function Android() {
   return (
@@ -67,7 +66,7 @@ export default function Android() {
       </Pressable>
       <Separator />
       <Image
-        source={require('../../assets/react.png')}
+        source={require('../assets/react.png')}
         style={[styles.img, img, { backgroundColor: 'magenta' }]}
         blurRadius={2}
       />
@@ -94,11 +93,6 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: 'green',
     color: '#ffffff',
-  },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
   },
   img: {
     width: 200,
