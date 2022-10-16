@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import { StyleSheet, Pressable, Text } from 'react-native';
 
-export default function ListItem({ el }) {
+export default function ListItem({ el, deleteHandler }) {
+  const [press, setPress] = useState(styles.pressOut);
+
   return (
-    <Pressable>
-      <Text style={styles.text}>
-        {el.index}. {el.text}
-      </Text>
+    <Pressable
+      style={press}
+      onPressIn={() => setPress(styles.pressIn)}
+      onPressOut={() => deleteHandler(el.key)}
+    >
+      <Text style={styles.text}>{el.text}</Text>
     </Pressable>
   );
 }
@@ -21,6 +26,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#fafafa',
     color: '#525252',
+  },
+  pressOut: {
+    opacity: 1,
+  },
+  pressIn: {
+    opacity: 0.2,
   },
 });
 
