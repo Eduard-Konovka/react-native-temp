@@ -1,9 +1,15 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image, Platform } from 'react-native';
 
 export default function Loader() {
   return (
     <View style={styles.box}>
-      <Image style={styles.img} source={require('../assets/loader.gif')} />
+      <Image
+        style={Platform.select({
+          native: styles.imgNative,
+          default: styles.imgWeb,
+        })}
+        source={require('../assets/loader.gif')}
+      />
     </View>
   );
 }
@@ -17,9 +23,13 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  img: {
-    width: '100%',
-    height: '50%',
+  imgNative: {
+    width: 250,
+    height: 250,
+  },
+  imgWeb: {
+    width: 500,
+    height: 500,
   },
 });
 
