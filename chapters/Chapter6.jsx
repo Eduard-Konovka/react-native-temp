@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
 import Loader from '../components/Loader';
 import Main from '../components/Main';
@@ -19,7 +19,6 @@ export default function Chapter6() {
       } catch (e) {
         console.warn(e);
       } finally {
-        // Tell the application to render
         setFontIsReady(true);
       }
     }
