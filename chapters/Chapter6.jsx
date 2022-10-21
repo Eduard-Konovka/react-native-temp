@@ -20,7 +20,7 @@ export default function Chapter6() {
         console.warn(e);
       } finally {
         // Tell the application to render
-        setAppIsReady(true);
+        setFontIsReady(true);
       }
     }
 
