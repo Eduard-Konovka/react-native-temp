@@ -1,4 +1,4 @@
-import { View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Image, Button } from 'react-native';
 import { globalStyle } from '../styles/style';
 
 export default function FullInfo({ navigation, route }) {
@@ -8,12 +8,36 @@ export default function FullInfo({ navigation, route }) {
 
   return (
     <View style={globalStyle.main}>
-      <Text style={globalStyle.title}>{route.params.name}</Text>
-      <Text>{route.params.full}</Text>
+      <Image
+        source={{
+          uri: route.params.img,
+          width: '100%',
+          height: 200,
+        }}
+      />
+      <Text style={[globalStyle.title, styles.header]}>
+        {route.params.name}
+      </Text>
+      <Text style={styles.full}>{route.params.full}</Text>
       <Button title="Назад" onPress={goBack} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  header: {
+    fontSize: 25,
+    marginTop: 25,
+  },
+  full: {
+    fontFamily: 'light',
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 25,
+    color: '#f55151',
+  },
+});
 
 FullInfo.defaultProps = {
   children: null,
