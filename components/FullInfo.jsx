@@ -1,19 +1,20 @@
 import { View, Text, Button } from 'react-native';
 import { globalStyle } from '../styles/style';
 
-export default function Contacts({ navigation }) {
+export default function FullInfo({ navigation, route }) {
   const goBack = () => {
     navigation.goBack();
   };
 
   return (
     <View style={globalStyle.main}>
-      <Text style={globalStyle.title}>Страница про нас</Text>
+      <Text style={globalStyle.title}>{route.params.name}</Text>
+      <Text>{route.params.full}</Text>
       <Button title="Назад" onPress={goBack} />
     </View>
   );
 }
 
-Contacts.defaultProps = {
+FullInfo.defaultProps = {
   children: null,
 };

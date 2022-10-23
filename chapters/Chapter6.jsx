@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
 import Loader from '../components/Loader';
-import Main from '../components/Main';
+import Navigate from '../components/Navigate';
 
 export default function Chapter6() {
   const [fontIsReady, setFontIsReady] = useState(false);
@@ -26,7 +26,7 @@ export default function Chapter6() {
     prepare();
   }, []);
 
-  return !fontIsReady ? <Loader /> : <Main />;
+  return !fontIsReady ? <Loader /> : <Navigate />;
 }
 
 Chapter6.defaultProps = {
