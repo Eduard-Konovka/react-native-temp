@@ -8,13 +8,7 @@ export default function FullInfo({ navigation, route }) {
 
   return (
     <View style={globalStyle.main}>
-      <Image
-        source={{
-          uri: route.params.img,
-          width: '100%',
-          height: 200,
-        }}
-      />
+      <Image source={{ uri: route.params.img }} style={styles.image} />
       <Text style={[globalStyle.title, styles.header]}>
         {route.params.name}
       </Text>
@@ -25,6 +19,10 @@ export default function FullInfo({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
+  image: {
+    width: '100%',
+    height: 200,
+  },
   header: {
     fontSize: 25,
     marginTop: 25,

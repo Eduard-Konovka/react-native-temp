@@ -21,7 +21,7 @@ export default function Navigate() {
               height: 100,
             },
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontWeight: '700',
             },
             headerTitleAlign: 'center',
           }}
@@ -35,7 +35,7 @@ export default function Navigate() {
               backgroundColor: '#56ca21',
             },
             headerTitleStyle: {
-              fontWeight: 'light',
+              fontWeight: '200',
             },
             headerTitleAlign: 'center',
           }}
@@ -49,7 +49,7 @@ export default function Navigate() {
               backgroundColor: '#cea563',
             },
             headerTitleStyle: {
-              fontWeight: 'light',
+              fontWeight: '200',
             },
             headerTitleAlign: 'center',
           }}

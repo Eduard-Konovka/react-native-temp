@@ -41,13 +41,7 @@ export default function Main({ navigation }) {
             }}
             onPress={() => navigation.navigate('FullInfo', item)}
           >
-            <Image
-              source={{
-                uri: item.img,
-                width: '100%',
-                height: 200,
-              }}
-            />
+            <Image source={{ uri: item.img }} style={styles.image} />
             <Text style={styles.title}>{item.name}</Text>
             <Text style={styles.anonc}>{item.anonc}</Text>
           </Pressable>
@@ -74,6 +68,10 @@ const styles = StyleSheet.create({
   },
   pressIn: {
     opacity: 0.5,
+  },
+  image: {
+    width: '100%',
+    height: 200,
   },
   title: {
     fontFamily: 'bold',
