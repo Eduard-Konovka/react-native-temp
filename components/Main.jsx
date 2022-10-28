@@ -7,15 +7,37 @@ import {
   Button,
   FlatList,
   Pressable,
+  Modal,
 } from 'react-native';
 import { globalStyle } from '../styles/style';
+import { Ionicons } from '@expo/vector-icons';
 import db from '../db';
 
 export default function Main({ navigation }) {
   const [news, setNews] = useState(db);
+  const [modalWindiw, setModalWindiw] = useState(false);
 
   return (
     <View style={globalStyle.main}>
+      <Modal visible={modalWindiw}>
+        <View style={globalStyle.main}>
+          <Ionicons
+            name="close-circle"
+            size={50}
+            color="red"
+            style={styles.icon}
+            onPress={() => setModalWindiw(false)}
+          />
+          <Text style={styles.title}>Форма добавления статей</Text>
+        </View>
+      </Modal>
+      <Ionicons
+        name="add-circle"
+        size={50}
+        color="green"
+        style={[styles.icon, styles.iconAdd]}
+        onPress={() => setModalWindiw(true)}
+      />
       <Text style={[globalStyle.title, styles.header]}>Главная страница</Text>
       <FlatList
         data={news}
@@ -56,6 +78,12 @@ export default function Main({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  icon: {
+    textAlign: 'center',
+  },
+  iconAdd: {
+    marginBottom: 15,
+  },
   header: {
     marginBottom: 30,
   },
