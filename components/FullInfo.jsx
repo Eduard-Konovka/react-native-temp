@@ -9,10 +9,13 @@ export default function FullInfo({ navigation, route }) {
   return (
     <View style={globalStyle.main}>
       <Image source={{ uri: route.params.img }} style={styles.image} />
+
       <Text style={[globalStyle.title, styles.header]}>
         {route.params.name}
       </Text>
+
       <Text style={styles.full}>{route.params.full}</Text>
+
       <Button title="Назад" onPress={goBack} />
     </View>
   );

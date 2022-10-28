@@ -26,6 +26,7 @@ export default function Navigate() {
             headerTitleAlign: 'center',
           }}
         />
+
         <Stack.Screen
           name="FullInfo"
           component={FullInfo}
@@ -40,6 +41,7 @@ export default function Navigate() {
             headerTitleAlign: 'center',
           }}
         />
+
         <Stack.Screen
           name="Contacts"
           component={Contacts}

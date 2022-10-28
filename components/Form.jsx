@@ -14,7 +14,7 @@ export default function Form({ addHandler }) {
         style={styles.input}
         onChangeText={onChange}
         placeholder="Впишите задачу..."
-      ></TextInput>
+      />
       <Button
         title="Добавить задачу"
         color="green"

@@ -9,6 +9,7 @@ export default function Contacts({ navigation }) {
   return (
     <View style={globalStyle.main}>
       <Text style={[globalStyle.title, styles.title]}>Страница про нас</Text>
+
       <Text style={styles.description}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam
         maxime suscipit eaque explicabo autem odit, qui ad libero deleniti. Eos,
@@ -17,6 +18,7 @@ export default function Contacts({ navigation }) {
         dicta, exercitationem pariatur sapiente ipsa vero vel quod aut delectus
         aspernatur nihil nesciunt.
       </Text>
+
       <Button title="Назад" onPress={goBack} />
     </View>
   );

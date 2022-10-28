@@ -9,13 +9,22 @@ import {
   Pressable,
   Modal,
 } from 'react-native';
-import { globalStyle } from '../styles/style';
 import { Ionicons } from '@expo/vector-icons';
+import { globalStyle } from '../styles/style';
+import ModalForm from './ModalForm';
 import db from '../db';
 
 export default function Main({ navigation }) {
   const [news, setNews] = useState(db);
   const [modalWindiw, setModalWindiw] = useState(false);
+
+  const addArticle = article => {
+    setNews(list => {
+      article.key = Math.random().toString();
+      return [article, ...list];
+    });
+    setModalWindiw(false);
+  };
 
   return (
     <View style={globalStyle.main}>
@@ -28,9 +37,13 @@ export default function Main({ navigation }) {
             style={styles.icon}
             onPress={() => setModalWindiw(false)}
           />
+
           <Text style={styles.title}>Форма добавления статей</Text>
+
+          <ModalForm addArticle={addArticle} />
         </View>
       </Modal>
+
       <Ionicons
         name="add-circle"
         size={50}
@@ -38,7 +51,9 @@ export default function Main({ navigation }) {
         style={[styles.icon, styles.iconAdd]}
         onPress={() => setModalWindiw(true)}
       />
+
       <Text style={[globalStyle.title, styles.header]}>Главная страница</Text>
+
       <FlatList
         data={news}
         renderItem={({ item }) => (
@@ -64,11 +79,14 @@ export default function Main({ navigation }) {
             onPress={() => navigation.navigate('FullInfo', item)}
           >
             <Image source={{ uri: item.img }} style={styles.image} />
+
             <Text style={styles.title}>{item.name}</Text>
+
             <Text style={styles.anonc}>{item.anonc}</Text>
           </Pressable>
         )}
       />
+
       <Button
         title="Контакты"
         onPress={() => navigation.navigate('Contacts')}
