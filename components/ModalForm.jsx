@@ -1,5 +1,4 @@
 import { StyleSheet, View, TextInput, Button } from 'react-native';
-import { globalStyle } from '../styles/style';
 import { Formik } from 'formik';
 
 export default function ModalForm({ addArticle }) {
